@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Problema de Lógica: Profesiones en una Fiesta</title>
+  <title>Problemas Lógicos con ABP</title>
   <style>
     body {
       margin: 0;
@@ -16,6 +16,7 @@
     .tabs {
       display: flex;
       background: #1a237e;
+      flex-wrap: wrap;
     }
 
     .tab {
@@ -27,6 +28,7 @@
       background: #303f9f;
       border-bottom: 3px solid transparent;
       transition: background 0.3s;
+      min-width: 200px;
     }
 
     .tab.active {
@@ -53,6 +55,10 @@
 
     h1, h2 {
       color: #1a237e;
+    }
+
+    ul {
+      padding-left: 1.5rem;
     }
 
     .pista {
@@ -96,14 +102,38 @@
 <body>
 
   <div class="tabs">
-    <div class="tab active" onclick="switchTab(0)">¿Qué es un problema lógico?</div>
-    <div class="tab" onclick="switchTab(1)">Enunciado del problema</div>
+    <div class="tab active" onclick="switchTab(0)">¿Qué es ABP?</div>
+    <div class="tab" onclick="switchTab(1)">¿Qué es un problema lógico?</div>
+    <div class="tab" onclick="switchTab(2)">Enunciado del problema</div>
   </div>
 
   <div class="container">
 
-    <!-- Tab 1: Explicación -->
+    <!-- Tab 0: ABP -->
     <div class="content active">
+      <h1>Aprendizaje Basado en Problemas (ABP)</h1>
+      <p>
+        Aprendizaje Basado en Problemas (ABP) es una estrategia de enseñanza en la que los estudiantes aprenden a través de la resolución de un problema realista o retador que se les plantea desde el inicio. No se les entrega la información de forma directa, sino que deben buscarla, analizarla y aplicarla por sí mismos o en equipo para encontrar una solución.
+      </p>
+      <p>En términos simples, el ABP consiste en:</p>
+      <ul>
+        <li>Presentar un problema abierto o una situación desafiante.</li>
+        <li>Motivar al estudiante a preguntarse, investigar y razonar.</li>
+        <li>Fomentar el trabajo colaborativo, la toma de decisiones y el pensamiento crítico.</li>
+        <li>El profesor actúa como guía o facilitador, no como transmisor de contenido.</li>
+      </ul>
+      <p>Esta estrategia pone al estudiante en el centro del proceso y le ayuda a desarrollar habilidades muy valiosas como:</p>
+      <ul>
+        <li>Comprensión lectora</li>
+        <li>Resolución de problemas</li>
+        <li>Razonamiento lógico</li>
+        <li>Trabajo en equipo</li>
+        <li>Autonomía en el aprendizaje</li>
+      </ul>
+    </div>
+
+    <!-- Tab 1: Explicación lógica -->
+    <div class="content">
       <h1>¿Qué es un problema lógico?</h1>
       <p>
         Un <strong>problema lógico</strong> es un ejercicio que pone a prueba nuestra capacidad de <em>comprender, razonar e inferir</em> relaciones entre datos, hechos o situaciones, a partir de información limitada. Su resolución no depende de fórmulas matemáticas sino del uso de la <strong>lógica deductiva</strong>, el análisis de pistas y la inferencia coherente.
@@ -149,7 +179,6 @@
       </p>
 
       <h2>Pistas</h2>
-
       <div class="pista"><strong>Pista 1:</strong> El señor Blanco sondea al banquero sobre la posibilidad de obtener un préstamo.</div>
       <div class="pista"><strong>Pista 2:</strong> El señor Castaño conoció al fotógrafo cuando le contrató para hacer las fotografías de su boda.</div>
       <div class="pista"><strong>Pista 3:</strong> El cantante y el señor Blanco son amigos, pero nunca han tenido tratos de negocios.</div>
