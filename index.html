@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Problema de Lógica: Profesiones en una Fiesta</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: #f8f9fa;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .tabs {
+      display: flex;
+      background: #1a237e;
+    }
+
+    .tab {
+      flex: 1;
+      padding: 1rem;
+      text-align: center;
+      color: white;
+      cursor: pointer;
+      background: #303f9f;
+      border-bottom: 3px solid transparent;
+      transition: background 0.3s;
+    }
+
+    .tab.active {
+      background: #1a237e;
+      border-bottom: 3px solid #ffca28;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 0 0 12px 12px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+
+    .content {
+      display: none;
+    }
+
+    .content.active {
+      display: block;
+    }
+
+    h1, h2 {
+      color: #1a237e;
+    }
+
+    .pista {
+      background: #e3f2fd;
+      border-left: 5px solid #1976d2;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 6px;
+    }
+
+    .objetivo {
+      margin-top: 2rem;
+      font-weight: bold;
+      background: #fff8e1;
+      border-left: 5px solid #f9a825;
+      padding: 1rem;
+      border-radius: 6px;
+    }
+
+    .qr-section {
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .qr-section p {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    canvas {
+      margin: 1rem 0;
+    }
+
+    a {
+      color: #1565c0;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="tabs">
+    <div class="tab active" onclick="switchTab(0)">¿Qué es un problema lógico?</div>
+    <div class="tab" onclick="switchTab(1)">Enunciado del problema</div>
+  </div>
+
+  <div class="container">
+
+    <!-- Tab 1: Explicación -->
+    <div class="content active">
+      <h1>¿Qué es un problema lógico?</h1>
+      <p>
+        Un <strong>problema lógico</strong> es un ejercicio que pone a prueba nuestra capacidad de <em>comprender, razonar e inferir</em> relaciones entre datos, hechos o situaciones, a partir de información limitada. Su resolución no depende de fórmulas matemáticas sino del uso de la <strong>lógica deductiva</strong>, el análisis de pistas y la inferencia coherente.
+      </p>
+
+      <h2>Relación con la comprensión lectora</h2>
+      <p>
+        Resolver problemas lógicos exige una lectura atenta, identificación de ideas clave, conexión de pistas y comprensión global del texto. Por eso, estas actividades fortalecen la <strong>comprensión lectora crítica</strong> y promueven el desarrollo de habilidades comunicativas esenciales en la vida universitaria.
+      </p>
+
+      <h2>Razonamiento lógico o inferencia lógica</h2>
+      <p>
+        La inferencia lógica consiste en extraer conclusiones válidas a partir de información conocida. Practicarla regularmente mejora la toma de decisiones, la argumentación y la resolución estructurada de problemas en cualquier área del conocimiento.
+      </p>
+
+      <h2>Beneficios para estudiantes de primer semestre</h2>
+      <ul>
+        <li>Fortalece el pensamiento estructurado y analítico.</li>
+        <li>Mejora la concentración, la atención al detalle y la memoria.</li>
+        <li>Prepara al estudiante para enfrentar desafíos académicos con más confianza.</li>
+        <li>Desarrolla habilidades transversales útiles en todas las carreras.</li>
+        <li>Fomenta la creatividad y el gusto por resolver desafíos intelectuales.</li>
+      </ul>
+    </div>
+
+    <!-- Tab 2: Enunciado del problema -->
+    <div class="content">
+      <h1>Problema de Lógica: Profesiones en una Fiesta</h1>
+
+      <h2>Problema</h2>
+      <p>
+        Una joven asiste a una fiesta. Le presentan a cuatro hombres en una sucesión más bien rápida y,
+        como es frecuente en tales reuniones, pronto se hace mención del tipo de trabajo a que se dedica cada uno.
+        Desgraciadamente, a la chica le falla un poco la memoria. Al cabo de media hora, sólo es capaz de recordar
+        que ha conocido al señor Castaño, el señor Blanco, el señor Moreno y el señor Rubio. Se acuerda también de
+        que uno de ellos es fotógrafo, que hay un tendero, un banquero y un cantante, pero le resulta imposible
+        señalar un nombre para cada uno.
+      </p>
+      <p>
+        Su anfitriona, una amiga aficionada a las bromas, se niega a refrescarle la memoria, pero le proporciona
+        cuatro pistas. Por fortuna, la lógica de la muchacha es mejor que su memoria y, rápidamente, empareja cada
+        hombre con su profesión. ¿Puede hacerlo usted? Aquí están las pistas:
+      </p>
+
+      <h2>Pistas</h2>
+
+      <div class="pista"><strong>Pista 1:</strong> El señor Blanco sondea al banquero sobre la posibilidad de obtener un préstamo.</div>
+      <div class="pista"><strong>Pista 2:</strong> El señor Castaño conoció al fotógrafo cuando le contrató para hacer las fotografías de su boda.</div>
+      <div class="pista"><strong>Pista 3:</strong> El cantante y el señor Blanco son amigos, pero nunca han tenido tratos de negocios.</div>
+      <div class="pista"><strong>Pista 4:</strong> Ni el señor Moreno ni el cantante conocían al señor Rubio antes de la fiesta.</div>
+
+      <div class="objetivo">
+        Objetivo: Emparejar correctamente a cada uno de los señores (Castaño, Blanco, Moreno y Rubio)
+        con su profesión (fotógrafo, tendero, banquero y cantante) utilizando sólo las pistas dadas.
+      </div>
+
+      <div class="qr-section">
+        <h2>Accede a más problemas como este</h2>
+        <canvas id="qrCanvas"></canvas>
+        <p>
+          <a href="https://jestrada2020.github.io/problemaslogicosyrazonamientov1/" target="_blank">
+            https://jestrada2020.github.io/problemaslogicosyrazonamientov1/
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+  <script>
+    const url = "https://jestrada2020.github.io/problemaslogicosyrazonamientov1/";
+    QRCode.toCanvas(document.getElementById('qrCanvas'), url, { width: 150 }, function (error) {
+      if (error) console.error(error);
+    });
+
+    function switchTab(index) {
+      const tabs = document.querySelectorAll('.tab');
+      const contents = document.querySelectorAll('.content');
+
+      tabs.forEach((tab, i) => {
+        tab.classList.toggle('active', i === index);
+        contents[i].classList.toggle('active', i === index);
+      });
+    }
+  </script>
+</body>
+</html>
